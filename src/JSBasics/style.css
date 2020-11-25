@@ -1,0 +1,27 @@
+.csharp
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: 2px solid green;
+    border-radius: 20px;
+}
+
+.web 
+{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: 2px solid red;
+    border-radius: 20px;
+}
+
+.csharp-text
+{
+    color: red;
+}
+
+.web-text
+{
+    color:green;
+}

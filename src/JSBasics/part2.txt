@@ -1,0 +1,88 @@
+let names = ["Dominic", "Sam", "Bill"];
+
+for (let i=0; i < names.length; i++)
+{
+    console.log(names[i]);
+}
+
+let isAlive = true;
+let age = 90;
+while (isAlive)
+{
+    console.log("I'm alive");
+    
+    if (age < 100)
+        age++;
+    else
+        isAlive = false;
+    
+}
+
+let num = 3;
+if (num % 2 == 0)
+{
+    console.log(`${num} is a even number`);
+}
+else 
+{
+    console.log(`${num} is a odd number`);
+}
+
+age = 14;
+if (age >= 18)
+{
+    console.log("You are old enough to vote");
+}
+else
+{
+    console.log("You are not old enough to vote.");
+}
+
+let isClean = true;
+if (isClean && age >= 16)
+{
+    var isMale = true;
+    console.log("You can drive");
+}
+else
+{
+    console.log("You can't drive");
+}
+
+console.log(isMale);
+
+const ages = [3, 5, 12, 12, 18, 14, 19];
+
+for (let i=0; i < ages.length; i++)
+{
+    if (ages[i] >= 18)
+    {
+        console.log("There is an adult in the array");
+        break;
+    }
+}
+
+const grade = 'B';
+
+switch (grade) {
+    case 'A':
+        console.log("You very good, keep it up");
+        break;
+    case 'B':
+        console.log("You doing good");
+        break;
+    case 'C':
+        console.log("You doing okay, but you should do better");
+        break;
+    case 'D':
+        console.log("You starting to fail the class, study more");
+        break;
+    case 'F':
+        console.log("You failed the class and will get a wiping");
+        break;
+
+    default:
+        console.log("Invalid grade");
+        break;
+}
+

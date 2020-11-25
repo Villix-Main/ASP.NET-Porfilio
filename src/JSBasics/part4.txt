@@ -1,0 +1,74 @@
+function GreetUser(username = "BLANK") {
+    console.log(`Hello there, ${username}`);
+}
+
+// Function Expression
+const SayHello = function() {
+    console.log("Hello there");
+}; 
+
+const PrintUserDetail = function(name = "EMPTY_FIELD", age = 0, salary = 0.0) {
+    console.log(`Name: ${name}`);
+    console.log(`Age: ${age}`);
+    console.log(`Salary: ${salary}`);
+};
+
+const Add = function(num1, num2) {
+    return num1 + num2;
+};
+
+// const CalculateCylinderArea = function(radius) {
+//      return 3.14 * radius**3;
+// }
+
+const CalculateCylinderArea = radius => 3.14 * radius**3;
+
+const Greet = () => "Hello World";
+
+const Bill = (products, tax) => {
+    let total = 0;
+    for (let i=0; i < products.length; i++) {
+        total += products[i] + products[i] * tax;
+    }
+    return total;
+};
+
+const SaveToDatabase = afterSave => {
+    console.log("Saving data to database...");
+    console.log("Done saving");
+    afterSave();
+};
+
+SaveToDatabase(() => {
+    console.log("Displaying data on UI");
+})
+
+SayHello();
+GreetUser("Dominic");
+PrintUserDetail("Dominic", 14, 343234);
+
+let num1 = 50;
+let num2 = 100;
+let total = Add(num1,num2);
+console.log(total);
+console.log(CalculateCylinderArea(5));
+
+const products = [350, 100, 250, 1000];
+// console.log(Bill(products, 0.07))
+products.forEach((product, position) => {
+    const tax = 0.06;
+    console.log(position, product + product * tax)
+});
+
+
+
+
+
+const ul = document.querySelector('.names');
+const people = ["Dominic", "Jack", "Sam", "Bill", "George"];
+
+let html = ``;
+people.forEach(name => html += `<li style="color: red">${name}</li>`);
+
+ul.innerHTML = html;
+

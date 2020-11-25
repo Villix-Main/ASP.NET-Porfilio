@@ -1,0 +1,77 @@
+
+const products = [
+    {
+        name: "Dell XPS 13",
+        yearReleased: "2019",
+        price: 1348.0
+    },
+    {
+        name: "IPhone 12",
+        yearReleased: "2020",
+        price: 1100
+    },
+    {
+        name: "C# knowledge",
+        yearReleased: 2018,
+        price: 49.0
+    }
+];
+
+
+let user = {
+    name: "Dominic",
+    age: 14,
+    isMale: true,
+    email: "villixmain@gmail.com",
+    password: "TestPassword",
+    products: products,
+    login() {
+        if (this.password == "Villixdude11") {
+            console.log("Good Morning");
+        }
+        else {
+            console.log("Incorrect password");
+        }
+    },
+    printProducts() {
+        this.products.forEach((hobby, position) => console.log(`${position}: ${hobby.name}`));
+    }
+};
+
+// Global Context
+console.log(this);
+
+console.log(typeof user);
+
+console.log(user);
+console.log(user.name);
+
+user.salary = 50000;
+console.log(user.salary)
+
+console.log(user["isMale"]);
+
+user["age"] = 15;
+console.log(user.age);
+
+user.login();
+user.printProducts();
+
+console.log(Math);
+console.log(Math.pow(2, 4));
+console.log(Math.floor(5.8));
+console.log(Math.ceil(5.8));
+console.log(Math.round(5.8));
+console.log(Math.trunc(10.3433433483));
+
+const randomNumber = Math.random();
+console.log(randomNumber);
+
+let num = 50;
+let copyNum = num;
+copyNum = 100;
+console.log(copyNum);
+
+let anotherUser = user;
+anotherUser.name = "Josh";
+console.log(user.name);

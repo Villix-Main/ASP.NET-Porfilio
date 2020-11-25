@@ -1,0 +1,24 @@
+console.log(document);
+console.log(document.URL);
+
+const greeting = document.querySelector("body > h1");
+console.log(greeting);
+
+// const responseByQuery = document.querySelectorAll(".response");
+// console.log(response);
+// console.log(response[1]);
+// console.log();
+// response.forEach(resp => console.log(resp));
+
+const responsesByClass = document.getElementsByClassName("response")
+console.log(responsesByClass);
+console.log(responsesByClass[0]);
+console.log(responsesByClass[1]);
+
+const nameById = document.getElementById("name");
+console.log(nameById);
+
+const paras = document.getElementsByTagName("p");
+console.log(paras);
+console.log(paras[0]);
+console.log(paras[1]);

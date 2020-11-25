@@ -1,0 +1,65 @@
+let fullName = "Dominic Martinez";
+
+let sliceStr = fullName.slice(7, 11);
+let subStr = fullName.substring(7, 2);
+
+
+console.log(sliceStr);
+console.log(subStr);
+
+// 2 + 3 - 5 * 2 
+// 5 - 5 = 0
+// 0 * 2 = 0
+// 2 * 5 = -10
+// -10 + 3 = -7
+// -7 + 2 = -5
+
+console.log(2 + 3 - 5 * 2);
+
+let languagesKnown = 3;
+
+let result = `Dominic Martinez knows a total of ${languagesKnown} languages`;
+console.log(result);
+
+let html = ` b 
+    <h1>${fullName}</h1>
+`;
+
+names = ["Dominic", "Jack", "Tim", "Bill", "Sam"];
+
+result = names.join('|');
+console.log(result); 
+
+let moreNames = ["Zach", "Zoe", "George", "Allen"];
+
+let allNames = names.concat(moreNames);
+console.log(allNames); 
+
+names.push("Mike");
+console.log(names);
+
+result = names.pop();
+console.log(names);
+console.log(result);
+
+let age = 14;
+console.log(`Dominic is ${age}`);
+
+console.log(fullName.length > 5);  
+console.log(fullName.includes('b'));
+console.log(fullName.includes('z'));
+console.log(names.includes("Dominic")); 
+console.log(fullName == "Dominic Martinez");
+console.log(fullName < "Alex");  
+console.log(age === "14")
+console.log(age !== '14')
+
+// let score = "1000";
+// console.log(typeof(score ))
+// score = Number(score);
+
+// console.log(score + 1);
+
+let answer = 'true';
+answer = Boolean(answer);
+console.log(answer)
