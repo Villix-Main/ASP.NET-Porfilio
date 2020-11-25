@@ -1,5 +1,8 @@
+using InitialProject.Models;
+using InitialProject.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace InitialStartupProject
@@ -24,6 +28,10 @@ namespace InitialStartupProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
+            services.AddServerSideBlazor();
+
+            services.AddTransient<JsonFilePersonService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +58,15 @@ namespace InitialStartupProject
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
+                endpoints.MapBlazorHub();
+                //endpoints.MapGet("/people", (context) =>
+                //{
+                //    var people = app.ApplicationServices.GetService<JsonFilePersonService>().GetPeople();
+                //    var json = JsonSerializer.Serialize(people);
+                //    return context.Response.WriteAsync(json);
+
+                //});
             });
         }
     }

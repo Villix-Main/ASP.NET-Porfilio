@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Components.Web;
+@using InitialProject.Models;
+@using InitialProject.Services;
+@inject JsonFilePersonService PersonService
+
+<div class="card-columns">
+    @{
+        @foreach (var person in PersonService.GetPeople())
+        {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@person.Name</h5>
+                </div>https://localhost:44324/
+            </div>
+        }
+    }
+</div>
+
+@code {
+
+}

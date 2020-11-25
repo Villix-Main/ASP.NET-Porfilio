@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1000,
+    "Name": "Dominic",
+    "Age": 14,
+    "YearsOfExperience": 1,
+    "IsMale": true
+  },
+  {
+    "Id": 1001,
+    "Name": "Jack",
+    "Age": 18,
+    "YearsOfExperience": 3,
+    "IsMale": true
+  },
+  {
+    "Id": 1002,
+    "Name": "Sally",
+    "Age": 16,
+    "YearsOfExperience": 2,
+    "IsMale": false
+  },
+  {
+    "Id": 1003,
+    "Name": "Bill",
+    "Age": 24,
+    "YearsOfExperience": 8,
+    "IsMale": true
+  },
+  {
+    "Id": 1004,
+    "Name": "Alex",
+    "Age": 21,
+    "YearsOfExperience": 2,
+    "IsMale": true
+  }
+]

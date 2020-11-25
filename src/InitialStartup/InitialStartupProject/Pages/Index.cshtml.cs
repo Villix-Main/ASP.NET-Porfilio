@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using InitialProject.Models;
+using InitialProject.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,14 +14,19 @@ namespace InitialStartupProject.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private JsonFilePersonService _personService;
+
+        public IEnumerable<Person> People { get; private set; }
+
+        public IndexModel(ILogger<IndexModel> logger, JsonFilePersonService personService)
         {
             _logger = logger;
+            _personService = personService;
         }
 
         public void OnGet()
         {
-
+            People = _personService.GetPeople();
         }
     }
 }
