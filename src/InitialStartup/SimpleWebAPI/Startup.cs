@@ -11,27 +11,35 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using SimpleWebAPI.Context;
+using System.Net.Http;
 
 namespace SimpleWebAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostEnvironment env)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
+
+        public IHostEnvironment Enviroment { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SimpleWebAPI", Version = "v1" });
-            });
+
+            services.AddDbContext<CodeSnippetDbContext>(options => options.UseInMemoryDatabase("CodeSnippets"));
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SimpleWebAPI", Version = "v1" });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,11 +48,7 @@ namespace SimpleWebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SimpleWebAPI v1"));
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
