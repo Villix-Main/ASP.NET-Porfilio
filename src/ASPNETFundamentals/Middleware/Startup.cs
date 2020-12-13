@@ -44,23 +44,30 @@ namespace Middleware
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            //app.Use(async (context, next) =>
-            //{
-            //    await context.Response.WriteAsync($"First inline delegate { Environment.NewLine }");
-            //    await next.Invoke();
-            //});
-
-
+            app.UseCookiePolicy();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync($"Hello from 1st delegate { Environment.NewLine }");
+                await next.Invoke();
+                await context.Response.StartAsync();
+                await context.Response.WriteAsync($"Hello from 1st delegate { Environment.NewLine }");
+            });
+           
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync($"Hello from 2nd delegate { Environment.NewLine }");
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
             });
-             
+
         }
     }
 }

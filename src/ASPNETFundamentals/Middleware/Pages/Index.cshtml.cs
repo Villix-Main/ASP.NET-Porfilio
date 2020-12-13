@@ -19,7 +19,6 @@ namespace Middleware.Pages
 
         public void OnGet()
         {
-
         }
     }
 }
