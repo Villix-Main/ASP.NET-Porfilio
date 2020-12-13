@@ -1,0 +1,73 @@
+const person = {
+    name: "Dominic",
+    sayHello() {
+        console.log(`Hello I'm ${this.name}`);
+    },
+    sayHelloAfterDelay(delay) {
+        setTimeout(() => {
+            console.log(`Hello I'm ${this.name}`);
+        }, delay)
+    }
+}
+
+person.sayHello();
+person.sayHelloAfterDelay(1000);
+
+const sayHello = person.sayHello.bind(person);
+sayHello();
+
+const products = [
+    { name: "Dell XPS 13", price: 1400 },
+    { name: "Razer blackwidow elite", price: 130 },
+    { name: "Raspberry Pi 4", price: 100 },
+    { name: "Razer huntsman", price: 150 }
+]
+
+// filterProducts = products.filter(job => job.price > 140);
+filterProducts = filterArray(products, x => x.price > 100);
+console.log(filterProducts);
+
+const people = ["Dominic", "Jack", "Tim", "Sam"];
+let items = people.map(color => `<li>${color}</li>`);
+
+console.log(items);
+
+let user = {
+    name: "Dominic Martinez",
+    email: "villixmain@gmail.com",
+    username: "Villix"
+}
+
+// const { name, email } = user;
+const { name, email, username: un } = user;
+console.log(name, email, un);
+
+const nums = [341, 342, 4352, 12, 34, 32];
+const moreNums = [3, 432, 6, 35, 12];
+const combined = [...nums, 69, ...moreNums];
+console.log(combined);
+
+let students = ["Dominic", "Roman", "Jack", "Joe"];
+let studentsClone = [...students];
+studentsClone.push(35);
+console.log(students);
+
+const x = {
+    x: 200
+};
+const y = {
+    y: 10
+};
+const position = {...x, ...y};
+console.log(position);
+
+
+function filterArray(array, predicate) {
+    output = [];
+    for (let i=0; i < array.length; i++) {
+        if (predicate(array[i])) {
+            output.push(array[i]);
+        }
+    }
+    return output;
+}
