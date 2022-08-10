@@ -1,0 +1,57 @@
+.flexbox-container 
+{
+    display: flex;
+
+    /* height: 800px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+    /* flex-wrap: wrap;
+    align-content: flex-end; */
+
+    /* Justify content on the main axis */
+    /* justify-content: space-around; */
+    /* Align items on the cross axis */
+    /* align-items: center; */
+}
+
+.flexbox-item 
+{
+    width: 200px;
+    margin: 10px;
+    border: 3px solid #333;
+    background-color: #dfdfdf;
+}
+
+.flexbox-item-1 
+{
+    min-height: 100px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    /* don't really use this property */
+    /* order: 2; */
+}
+
+.flexbox-item-2 
+{
+    /* flex-grow, flex-shrink, flex-basis */
+    /* flex: 2 0 0px; */
+    
+    min-height: 200px;
+    /* what flex grow does is divide the empty space with the values put into flex grow in each item */
+    flex-grow: 2;
+    /* tells flex-grow when to start adding space to flex item */
+    flex-basis: 0;
+    align-self: center;
+    /* order: 3; */
+
+}
+
+.flexbox-item-3
+{
+    min-height: 300px;
+    flex-grow: 1;
+    flex-basis: 0;
+    /* order: 1; */
+}
