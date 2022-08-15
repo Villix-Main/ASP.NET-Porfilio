@@ -1,0 +1,28 @@
+.grid-item 
+{
+    height: 100px;
+    width: 400px;
+}
+
+.grid-item-1
+{
+    background-color: #00eecc;
+}
+
+.grid-item-2
+{
+    background-color: #ee00ee;
+}
+
+.grid-item-3
+{
+    background-color: #00eecc;
+}
+
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 30px;
+}
